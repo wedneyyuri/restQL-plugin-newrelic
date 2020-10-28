@@ -58,6 +58,7 @@ func (n *NewRelicPlugin) BeforeTransaction(ctx context.Context, tr restql.Transa
 		URL:    tr.Url,
 		Method: tr.Method,
 	})
+	txn.AddAttribute("query", tr.Url.Query().Encode())
 	w := txn.SetWebResponse(noOpResponseWriter{})
 
 	txnCtx := context.WithValue(ctx, newRelicTransaction, txn)
