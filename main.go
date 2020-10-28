@@ -154,6 +154,7 @@ func (n *NewRelicPlugin) AfterRequest(ctx context.Context, request restql.HTTPRe
 		return ctx
 	}
 
+	segment.AddAttribute("errordetail", errordetail)
 	segment.Response = externalResponse
 	segment.End()
 
