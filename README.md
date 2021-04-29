@@ -1,4 +1,4 @@
-# MongoDB Plugin for RestQL
+# NewRelic Plugin for RestQL
 
 This plugin is an interface that allow [RestQL](https://github.com/b2wdigital/restQL-golang) to use [New Relic](https://newrelic.com/) as Application Performance Monitoring solution.
 
