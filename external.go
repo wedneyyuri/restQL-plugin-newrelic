@@ -7,7 +7,7 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"github.com/b2wdigital/restQL-golang/v4/pkg/restql"
+	"github.com/b2wdigital/restQL-golang/v6/pkg/restql"
 )
 
 func makeExternalRequest(request restql.HTTPRequest) (*http.Request, error) {

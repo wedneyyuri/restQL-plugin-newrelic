@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/b2wdigital/restQL-golang/v4/pkg/restql"
+	"github.com/b2wdigital/restQL-golang/v6/pkg/restql"
 	"github.com/newrelic/go-agent/v3/newrelic"
 	"github.com/pkg/errors"
 )
