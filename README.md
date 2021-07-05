@@ -7,7 +7,7 @@ This plugin is an interface that allow [RestQL](https://github.com/b2wdigital/re
 To use this plugin you need the [RestQL CLI]() tool. You can build a custom RestQL binary with this plugin using the following command:
 
 ```shell
-$ RUN restQL-cli build --with github.com/wedneyyuri/restQL-plugin-newrelic@v6.0.0 --output ./restQL v6.2.0
+$ RUN restQL-cli build --with github.com/wedneyyuri/restQL-plugin-newrelic@v1.1.0 --output ./restQL v6.2.0
 ```
 
 ## Usage
