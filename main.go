@@ -83,6 +83,8 @@ func (n *NewRelicPlugin) AfterTransaction(ctx context.Context, tr restql.Transac
 		return ctx
 	}
 
+	segment := txn.StartSegment("Flush")
+	defer segment.End()
 	//todo: set headers
 	w.WriteHeader(tr.Status)
 	_, err = w.Write(tr.Body)
