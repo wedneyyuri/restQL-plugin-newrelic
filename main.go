@@ -6,6 +6,8 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
+	"os"
+	"strconv"
 
 	"github.com/b2wdigital/restQL-golang/v6/pkg/restql"
 	"github.com/newrelic/go-agent/v3/newrelic"
@@ -32,7 +34,17 @@ func init() {
 }
 
 func MakeNewRelicPlugin(logger restql.Logger) (restql.LifecyclePlugin, error) {
-	app, err := newrelic.NewApplication(newrelic.ConfigFromEnvironment())
+	app, err := newrelic.NewApplication(
+		newrelic.ConfigFromEnvironment(),
+		func(c *newrelic.Config) {
+			maxSamples := os.Getenv("NEW_RELIC_TRANSACTION_EVENTS_MAX_SAMPLES_STORED")
+			if maxSamples != "" {
+				if m, err := strconv.Atoi(maxSamples); nil != err {
+					c.TransactionEvents.MaxSamplesStored = m
+				}
+			}
+		},
+	)
 
 	if err != nil {
 		logger.Error("failed to initialize new relic", err)
