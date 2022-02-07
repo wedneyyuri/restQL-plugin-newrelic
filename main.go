@@ -32,7 +32,10 @@ func init() {
 }
 
 func MakeNewRelicPlugin(logger restql.Logger) (restql.LifecyclePlugin, error) {
-	app, err := newrelic.NewApplication(newrelic.ConfigFromEnvironment())
+	app, err := newrelic.NewApplication(
+		newrelic.ConfigFromEnvironment(),
+		ExtraConfigFromEnvironment(),
+	)
 
 	if err != nil {
 		logger.Error("failed to initialize new relic", err)

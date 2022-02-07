@@ -38,6 +38,7 @@ This plugin can be configured [through environment variables](https://github.com
 - `NEW_RELIC_UTILIZATION_BILLING_HOSTNAME`: sets Utilization.BillingHostname
 - `NEW_RELIC_UTILIZATION_LOGICAL_PROCESSORS`: sets Utilization.LogicalProcessors using [strconv.Atoi](https://golang.org/pkg/strconv/#Atoi).
 - `NEW_RELIC_UTILIZATION_TOTAL_RAM_MIB`: sets Utilization.TotalRAMMIB using [strconv.Atoi](https://golang.org/pkg/strconv/#Atoi).
+- `NEW_RELIC_TRANSACTION_EVENTS_MAX_SAMPLES_STORED`: sets TransactionEvents.MaxSamplesStored using [strconv.Atoi](https://golang.org/pkg/strconv/#Atoi).
 
 ## License
 
